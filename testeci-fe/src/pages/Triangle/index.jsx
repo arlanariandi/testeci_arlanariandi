@@ -1,7 +1,7 @@
 import {useState} from "react";
 import axios from "axios";
 
-const Home = () => {
+const Triangle = () => {
     const [rows, setRows] = useState(0);
     const [type, setType] = useState('type1');
     const [triangle, setTriangle] = useState('');
@@ -72,4 +72,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Triangle;
