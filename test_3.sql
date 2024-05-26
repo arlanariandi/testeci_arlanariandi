@@ -53,9 +53,32 @@ values (1, 'Software Engineer', 1),
 
 -- insert data table karyawan
 insert into karyawan(id_karyawan, nik, nama, ttl, alamat, id_jabatan)
-values (1, '1234567890', 'Budi Santoso', '1990-01-01', 'Jl. Merdeka No. 1, Jakarta', 1),
-       (2, '0987654321', 'Siti Aminah', '1985-02-15', 'Jl. Sudirman No. 10, Jakarta', 2),
-       (3, '1122334455', 'Ahmad Fauzi', '1988-03-20', 'Jl. Gatot Subroto No. 15, Bandung', 3);
+values (1, '1234567890', 'Budi', '1990-01-01', 'Jl. Merdeka No. 1, Jakarta', 1),
+       (2, '0987654321', 'Siti', '1985-02-15', 'Jl. Sudirman No. 10, Jakarta', 2),
+       (3, '1122334455', 'Ahmad', '1988-03-20', 'Jl. Gatot Subroto No. 15, Bandung', 3);
 
+-- query menampilkan nama karyawan, nama jabatan, nama departemen, dan nama level
+SELECT karyawan.nama        AS nama_karyawan,
+       jabatan.nama_jabatan,
+       department.nama_dept AS nama_departemen,
+       level.nama_level
+FROM karyawan
+         JOIN
+     jabatan ON karyawan.id_jabatan = jabatan.id_jabatan
+         JOIN
+     level ON jabatan.id_level = level.id_level
+         JOIN
+     department ON jabatan.id_jabatan IN (SELECT id_jabatan
+                                          FROM jabatan
+                                          WHERE id_level = level.id_level);
 
+-- update data karyawan
+update karyawan
+set nama   = 'Ahmad',
+    alamat = 'Jl. Mangga No. 20, Jakarta'
+where id_karyawan = 1;
 
+-- delete data karyawan
+delete
+from karyawan
+where id_karyawan = 1;
