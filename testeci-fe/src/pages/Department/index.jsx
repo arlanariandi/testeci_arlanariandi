@@ -55,7 +55,7 @@ const Department = () => {
     const handleDelete = (id) => {
         const confirmDelete = window.confirm('Are you sure you want to delete this department?');
         if (confirmDelete) {
-            axios.delete(`http://localhost:8000/api/departments/${id}`)
+            axios.delete(`/api/departments/${id}`)
                 .then(() => {
                     fetchDepartments();
                 })
@@ -77,7 +77,7 @@ const Department = () => {
                     name="nama_dept"
                     value={formData.nama_dept}
                     onChange={handleInputChange}
-                    placeholder="Department Name"
+                    placeholder="Nama departemen"
                     required
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-1/2 p-2.5"
                 />
