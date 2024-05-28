@@ -108,7 +108,7 @@ const Jabatan = () => {
                 </div>
 
                 <button type="submit"
-                        className={`${isEditing ? 'bg-blue-700 hover:bg-blue-800 mr-4' : 'bg-teal-700 hover:bg-teal-800'} text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center`}>
+                        className={`${isEditing ? 'bg-blue-700 hover:bg-blue-800 mr-4' : 'bg-teal-500 hover:bg-teal-700'} text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center`}>
                     {isEditing ? 'Update' : 'Add'}</button>
                 {isEditing &&
                     <button

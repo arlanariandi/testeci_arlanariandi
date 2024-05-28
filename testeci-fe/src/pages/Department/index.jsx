@@ -69,28 +69,40 @@ const Department = () => {
 
     return (
         <div className="px-10 mt-16">
-            <h1 className="text-2xl font-bold text-gray-800 mb-4">Department</h1>
-
+            <h1 className="text-2xl font-bold text-gray-800">Department</h1>
+            <hr className="my-8"/>
+            <h2 className="text-lg font-semibold text-gray-800 mb-4">{isEditing ? 'Update Department' : 'Add Department'}</h2>
             <form onSubmit={handleFormSubmit}>
-                <input
-                    type="text"
-                    name="nama_dept"
-                    value={formData.nama_dept}
-                    onChange={handleInputChange}
-                    placeholder="Nama departemen"
-                    required
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-1/2 p-2.5"
-                />
+                <div className="mb-6">
+                    <label htmlFor="nama_dept"
+                           className="block mb-2 text-sm font-medium text-gray-900">Nama Department</label>
+                    <input type="text" id="nama_dept" name="nama_dept"
+                           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5"
+                           placeholder="IT" required
+                           value={formData.nama_dept}
+                           onChange={handleInputChange}/>
+                </div>
 
                 <button type="submit"
-                        className={`${isEditing ? 'text-blue-600' : 'text-teal-600'} font-medium hover:underline px-4`}>{isEditing ? 'Update' : 'Add'}</button>
-                {isEditing && <button type="button" onClick={() => {
-                    setIsEditing(false);
-                    setFormData({id_dept: '', nama_dept: ''});
-                }} className="font-medium text-red-600 hover:underline">Cancel</button>}
+                        className={`${isEditing ? 'bg-blue-700 hover:bg-blue-800 mr-4' : 'bg-teal-500 hover:bg-teal-700'} text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center`}>
+                    {isEditing ? 'Update' : 'Add'}</button>
+                {isEditing &&
+                    <button
+                        type="button"
+                        onClick={() => {
+                            setIsEditing(false);
+                            setFormData({id_dept: '', nama_dept: ''});
+                        }}
+                        className="text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+                        Cancel
+                    </button>
+                }
             </form>
 
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-8">
+            <hr className="my-8"/>
+
+            <h2 className="text-lg font-semibold text-gray-800 mb-4">Data Department</h2>
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>

@@ -26,8 +26,9 @@ const Triangle = () => {
 
     return (
         <div className="px-10 mt-16">
-            <h1 className="text-2xl font-bold text-gray-800 mb-4">Triangle</h1>
-            <div className="grid gap-16 md:grid-cols-2 ">
+            <h1 className="text-2xl font-bold text-gray-800">Triangle</h1>
+            <hr className="my-8"/>
+            <div className="grid gap-16 md:grid-cols-2">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <div className="mb-6">
