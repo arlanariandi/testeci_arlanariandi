@@ -87,7 +87,7 @@ const Karyawan = () => {
                     <div>
                         <label htmlFor="nik"
                                className="block mb-2 text-sm font-medium text-gray-900">NIK</label>
-                        <input type="text" id="nik" name="nik"
+                        <input type="number" id="nik" name="nik"
                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                placeholder="33839494xxxxx" required
                                value={formData.nik}
