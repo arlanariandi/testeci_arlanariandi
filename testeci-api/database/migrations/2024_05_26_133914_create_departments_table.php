@@ -15,6 +15,7 @@ return new class extends Migration {
 
             $table->string('nama_dept');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -32,7 +32,8 @@ const convertToWords = () => {
                 <h2>Output</h2>
                 {terbilang && (
                     <div>
-                        <p>{number}</p>
+                        <p>Rp. {number}</p>
+                        <p>Terbilang</p>
                         <div>{terbilang}</div>
                     </div>
                 )}

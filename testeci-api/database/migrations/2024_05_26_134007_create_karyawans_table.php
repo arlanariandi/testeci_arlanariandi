@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('alamat');
             $table->bigInteger('id_jabatan');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }
